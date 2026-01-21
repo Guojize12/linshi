@@ -11,67 +11,6 @@
 #include "app_user_floor.h"
 #include "app_user_rx.h"
 
-typedef struct
-{
-    Timer g_timer_cb[5]     ;//= {0};
-    uint8_t g_send_max[5]     ;//= {0};
-    uint8_t g_send_buf[5][255];//= {0};
-    uint8_t g_send_buf_len[5] ;//= {0};
-    uint8_t g_send_index      ;//=0;
-} bsp_send_def;
-extern bsp_send_def user_send;
-
-//����
-typedef struct {
-
-    uint8_t dnum     ;
-    uint8_t type     ;
-    uint16_t cmd      ;
-    uint8_t pid      ;
-    uint8_t pid_len  ;
-    bsp_id_def did  ;
-    uint8_t head      ;
-    uint8_t pack_num;
-
-
-} user_com_def;
-user_com_def g_comm= {0};
-uint8_t send_buff[255]= {0};
-
-
-static Timer g_timer_FxLoop= {0};
-static Timer g_timer_sendEnergy= {0};
-
-static Timer g_timer_FloorBoardLose= {0};
-
-static Timer g_timer_MUpdate= {0};
-
-extern Timer g_timer_ledcloce ;
-
-static Timer g_timer_StartCheck= {0};
-static Timer g_timer_Inspection= {0};
-static Timer g_timer_InspectionHeart= {0};
-
-
-
-
-st_object_info object_info = {0};
-st_elevator_info elevator_info[2] ={0};
-
-
-#ifdef USE_UART4
-#define APP_WIRELESS_UART          BSP_UART4
-#define APP_WIRELESS_UART_RX_LEN        UART4_RX_LEN
-#define	APP_WIRELESS_UART_BUF			 g_uart_buf[APP_WIRELESS_UART]
-#endif
-
-#ifdef USE_UART5
-#define APP_USER_UART          BSP_UART5
-#define APP_USER_UART_RX_LEN        UART5_RX_LEN
-#endif
-
-#define	APP_USER_UART_BUF			 g_uart_buf[APP_USER_UART]
-
 void APP_USER_sendEnergy(void)
 {
 
