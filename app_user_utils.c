@@ -19,7 +19,7 @@ uint8_t APP_USER_did2Index(uint32_t did)
 
 //??
 
-uint8_t APP_USER_supply_update(uint8_t index,uint8_t data)
+void APP_USER_supply_update(uint8_t index,uint8_t data)
 {
 
 		uint8_t support_floor =  elevator_info[index].support_data[0] &0x7F;
@@ -110,7 +110,7 @@ uint8_t APP_USER_findMapFloor2Num(int8_t floor)
 
 void APP_USER_saveMapFloor(void)
 {
-    //Èý·ÖÖÓÃ»ÓÐ¸üÐÂÁÐ±í ´æ´¢
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ ï¿½æ´¢
     uint8_t mapFloorList[MAPFLOOR_SAVE_NUM];
     uint8_t i;
     LOG("saveMapFloor  ");
@@ -127,7 +127,7 @@ void APP_USER_saveMapFloor(void)
         }
     }
     LOG("\n");
-    //µÚÒ»¸ö×Ö½Ú´æ³¤¶È£¬µÚ¶þ¸ö×Ö½ÚÒÔºó´æ±ðÃû
+    //ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö½Ú´æ³¤ï¿½È£ï¿½ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½
     APP_CONFIG_mapFLoorX_Set(mapFloorList,object_info.xFloorMapNum+1);
     
 }
@@ -135,7 +135,7 @@ void APP_USER_saveMapFloor(void)
 
 void APP_USER_resetMapFloor(void)
 {
-    //Èý·ÖÖÓÃ»ÓÐ¸üÐÂÁÐ±í ´æ´¢
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ ï¿½æ´¢
     uint8_t i;
     LOG("resetMapFloor\n");
     object_info.xFloorMapNum = MAXFLOOR;
@@ -149,7 +149,7 @@ void APP_USER_resetMapFloor(void)
 
 void APP_USER_getMapFloor(void)
 {
-    //Èý·ÖÖÓÃ»ÓÐ¸üÐÂÁÐ±í ´æ´¢
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ ï¿½æ´¢
     uint8_t mapFloorList[MAPFLOOR_SAVE_NUM];
     uint8_t num = 0;
     uint8_t needReset = 0;
@@ -200,7 +200,7 @@ void APP_USER_getMapFloor(void)
 
 void APP_USER_updateMapFloor(void)
 {
-    //Èý·ÖÖÓÃ»ÓÐ¸üÐÂÁÐ±í ´æ´¢
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ ï¿½æ´¢
     uint8_t mapFloorList[MAPFLOOR_SAVE_NUM];
     uint8_t num = 0;
     uint8_t i;

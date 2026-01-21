@@ -24,7 +24,7 @@ extern user_com_def g_comm;
 extern uint8_t send_buff[255];
 
 // Function declarations for protocol handlers
-void APP_COMM_Handle_R(void);
+void APP_COMM_Handle_R(user_com_def *comm,uint8_t *buff,uint8_t len);
 void APP_COMM_4000(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
 void APP_COMM_4001(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
 void APP_COMM_4002(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
@@ -44,7 +44,7 @@ void APP_COMM_4009(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t
 void APP_COMM_4010(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
 void APP_COMM_4012(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
 void APP_COMM_4013(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
-void APP_COMM_Handle_W(void);
+void APP_COMM_Handle_W(user_com_def *comm,uint8_t *buff,uint8_t len);
 
 #ifdef __cplusplus
 }
