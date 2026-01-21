@@ -5,7 +5,7 @@
 #include "app_user_packet.h"
 
 st_sched_info stSchedList[] = {
-    //Í¨ÐÅ×´Ì¬                      ×Ô¶¯×´Ì¬                        Î´ÂúÔ±×´Ì¬                       Òì³£Í£¿¿×´Ì¬              ÖÇÄÜ×´Ì¬                        µ÷¶È×óÓÒÁý
+    //Í¨ï¿½ï¿½×´Ì¬                      ï¿½Ô¶ï¿½×´Ì¬                        Î´ï¿½ï¿½Ô±×´Ì¬                       ï¿½ì³£Í£ï¿½ï¿½×´Ì¬              ï¿½ï¿½ï¿½ï¿½×´Ì¬                        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {SCHEDSTA_OK, SCHEDSTA_OK,      SCHEDSTA_OK,SCHEDSTA_OK,     SCHEDSTA_OK,SCHEDSTA_OK,    SCHEDSTA_OK,SCHEDSTA_OK,   SCHEDSTA_OK,SCHEDSTA_OK,        MASTER_SCHED},
                                                                     
     {SCHEDSTA_OK, SCHEDSTA_OK,      SCHEDSTA_OK,SCHEDSTA_OK,     SCHEDSTA_OK,SCHEDSTA_OK,    SCHEDSTA_OK,SCHEDSTA_OK,   SCHEDSTA_OK,SCHEDSTA_NG,        MASTER_ALL},
@@ -100,11 +100,11 @@ void APP_USER_SendKeyEvnet(uint8_t floor,uint8_t direction)
     {
         if (g_app_cfg.appLicence[MASTER_1] ==APPLICENCE_NORMAL)
         {
-            sched_No == MASTER_1;
+            sched_No = MASTER_1;
         }
         else if (g_app_cfg.appLicence[MASTER_2] ==APPLICENCE_NORMAL)
         {
-            sched_No == MASTER_2;
+            sched_No = MASTER_2;
         }
     }
     else
@@ -177,7 +177,7 @@ void APP_USER_SendKeyEvnet(uint8_t floor,uint8_t direction)
     }
     else
     {
-        ; //²»×ª·¢
+        ; //ï¿½ï¿½×ªï¿½ï¿½
         LOG("ERR don't sched. No.1: smart=%d commentSta=%d\n",elevator_info[MASTER_1].smart_mode,elevator_info[MASTER_1].MCommSta);
         LOG("ERR don't sched. No.2: smart=%d commentSta=%d\n",elevator_info[MASTER_2].smart_mode,elevator_info[MASTER_2].MCommSta);
     }
@@ -192,7 +192,7 @@ void APP_USER_SendCancelKeyEvnet(uint8_t floor,uint8_t direction)
     send_buff[buff_len++] = direction;
     g_comm.dnum = floor;
 
-    //½ÓÓ¦ÁÐ±íÀïÓÐÕâ¸ö²ã£¬¾Í·¢ËÍÈ¡Ïû°´¼ü
+    //ï¿½ï¿½Ó¦ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ã£¬ï¿½Í·ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     for(index=0; index<MASTER_MAX;index++)
     {
         cancel_Floor = 0;
@@ -206,7 +206,7 @@ void APP_USER_SendCancelKeyEvnet(uint8_t floor,uint8_t direction)
                 
         }
         if(cancel_Floor)
-            APP_USER_packet(5001,&elevator_info[index],send_buff,buff_len,1);//type 0 ²»µÈÓ¦´ð  1  µÈÓ¦´ð
+            APP_USER_packet(5001,&elevator_info[index],send_buff,buff_len,1);//type 0 ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½  1  ï¿½ï¿½Ó¦ï¿½ï¿½
     }
 }
 
@@ -241,7 +241,7 @@ void APP_COMM_KeyLedOn(uint8_t index, uint8_t flootID, uint8_t direction)
     //LOG("keyled on index=%d floor=%d dir=%d\n",index,flootID,direction);
 }
 
-//Ï¨Ãð²ãÃÅ°´¼üµÆ
+//Ï¨ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½
 
 void APP_COMM_KeyLedOff(uint8_t index, uint8_t flootID, uint8_t direction)
 {  

@@ -11,7 +11,7 @@ extern "C" {
 // Function declarations
 void APP_USER_SetCtlMode(uint8_t index,uint8_t ctlMode);
 void APP_USER_recoverErr(uint8_t index);
-void APP_USER_SendEnergy(uint8_t index);
+void APP_USER_SendEnergy(void);
 void APP_USER_SendDoorStatusEvnet(void);
 
 #ifdef __cplusplus

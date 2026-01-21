@@ -7,21 +7,7 @@ extern "C" {
 
 #include "app_config.h"
 #include "app_user.h"
-
-// Communication structures
-typedef struct {
-    uint8_t dnum     ;
-    uint8_t type     ;
-    uint16_t cmd      ;
-    uint8_t pid      ;
-    uint8_t pid_len  ;
-    bsp_id_def did  ;
-    uint8_t head      ;
-    uint8_t pack_num;
-} user_com_def;
-
-extern user_com_def g_comm;
-extern uint8_t send_buff[255];
+#include "app_user_globals.h"
 
 // Function declarations for protocol handlers
 void APP_COMM_Handle_R(user_com_def *comm,uint8_t *buff,uint8_t len);
