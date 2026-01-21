@@ -9,8 +9,8 @@ extern "C" {
 #include "app_user.h"
 
 // Function declarations
-void APP_COMM_Rx_Analysis(void);
-void APP_WIRELESS_Rx_Analysis(void);
+void APP_COMM_Rx_Analysis(uint8_t *buff,uint16_t size);
+void APP_WIRELESS_Rx_Analysis(uint8_t *buff,uint16_t size);
 void APP_USER_Rx_Handle(void);
 void APP_WIRELESS_Rx_Handle(void);
 

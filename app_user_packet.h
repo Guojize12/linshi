@@ -24,19 +24,6 @@ extern "C" {
 
 #define MAX_TIME 5
 
-// Communication structure already defined in app_user_globals.h
-// But we need it here for the module
-typedef struct {
-    uint8_t dnum;
-    uint8_t type;
-    uint16_t cmd;
-    uint8_t pid;
-    uint8_t pid_len;
-    bsp_id_def did;
-    uint8_t head;
-    uint8_t pack_num;
-} user_com_def;
-
 // Function declarations
 void APP_USER_Send(uint8_t *buf, uint16_t buf_len);
 void APP_WIRELESS_Send(uint8_t *buf, uint16_t buf_len);

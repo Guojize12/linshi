@@ -33,7 +33,7 @@ void APP_COMM_4004(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t
 void APP_COMM_4005(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
 void APP_COMM_4006(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
 void APP_COMM_4007(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
-void APP_COMM_IEEE754_to_buff(IEEE754 *value, uint8_t *buf);
+void APP_COMM_IEEE754_to_buff(uint8_t *dst,IEEE754 *src,uint8_t len);
 void APP_COMM_4007_setParam(uint8_t number);
 void APP_COMM_4008(uint8_t index, user_com_def *com_info, uint8_t *buf, uint16_t len);
 void APP_COMM_5008_setParameter(uint8_t number);
