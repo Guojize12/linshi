@@ -10,7 +10,7 @@ extern "C" {
 
 // Function declarations
 uint8_t APP_USER_did2Index(uint32_t did);
-void APP_USER_supply_update(uint8_t index, uint8_t floor);
+void APP_USER_supply_update(uint8_t index, uint8_t data);
 void APP_COMM_clearFlooXList(uint8_t index);
 void APP_COMM_supplyStaFx(uint8_t index,uint8_t flootID, uint8_t sta);
 void APP_USER_UNLOCK(uint8_t index, uint8_t floor, uint8_t sta);
